@@ -1,23 +1,9 @@
-import '../style/App.scss';
-import React from 'react';
-import MainContainer from '../containers/MainContainer';
-import Intro from './Intro/IntroSet'
+import "../style/App.scss";
+import React from "react";
+import MainContainer from "../containers/MainContainer";
 
-
-
-interface IntroProps {
-  isIntro: boolean;
-
-}
-
-
-const App: React.FC<IntroProps> = ({ isIntro }) => {
-
-  return (
-    <>
-      {isIntro ? <Intro /> : <MainContainer />}
-    </>
-  )
-}
+const App: React.FC = () => {
+  return <MainContainer />;
+};
 
 export default App;
