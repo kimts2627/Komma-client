@@ -1,5 +1,4 @@
 import React from "react";
-import MainContainer from "../containers/MainContainer";
 
 interface EndingProps {
   handleEndingModal: () => void;
@@ -25,7 +24,7 @@ const Ending: React.FC<EndingProps> = ({ handleEndingModal }) => {
         Return
       </button>
       <p className="ending name">
-        Hwang Soonhwan, Kim Taesu, Bae Seokjae, Jeong Yeonju
+        Kim Taesu, Bae Seokjae, Jeong Yeonju, Hwang Soonhwan
       </p>
       <footer className="ending copyright">
         ⓒ 2021. Komma Co. all rights reserved.

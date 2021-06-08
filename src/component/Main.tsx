@@ -99,7 +99,7 @@ const Main: React.FC<MainProps> = ({
       // 메인페이지 열릴 때 마다 유저정보에 담긴 각각 화면 구성하는 상태 가져와서 갱신
       let token = localStorage.getItem("token");
       axios
-        .get("https://kommaa.shop/users/userinfo", {
+        .get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         })

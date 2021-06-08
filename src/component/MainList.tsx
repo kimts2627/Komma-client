@@ -92,7 +92,7 @@ const MainList: React.FC<ListProps> = ({
 
   // 서버에서 노래정보 가져오기
   useEffect(() => {
-    axios("https://kommaa.shop/playlist/songlist", {
+    axios(`${process.env.REACT_APP_SERVER_API}/playlist/songlist`, {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })

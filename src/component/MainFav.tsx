@@ -180,14 +180,14 @@ export const SingleFav: React.FC<SingleFavProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        "https://kommaa.shop/playlist/deleteplaylist",
+        `${process.env.REACT_APP_SERVER_API}/playlist/deleteplaylist`,
         { id: id },
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       )
       .then((res) => res.data)
       .then((data) => {
         console.log(data);
-        return axios.get("https://kommaa.shop/users/userinfo", {
+        return axios.get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -366,14 +366,14 @@ export const FavAddModal: React.FC<FavAddProps> = ({
     }
     axios
       .post(
-        "https://kommaa.shop/playlist/saveplaylist",
+        `${process.env.REACT_APP_SERVER_API}/playlist/saveplaylist`,
         { ...mixtape },
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       )
       .then((res) => res.data)
       .then((data) => {
         console.log(data);
-        return axios.get("https://kommaa.shop/users/userinfo", {
+        return axios.get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });

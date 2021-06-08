@@ -44,7 +44,7 @@ const Setting: React.FC<SettingProps> = ({
   useEffect(() => {
     let token = localStorage.getItem("token");
     axios
-      .get("https://kommaa.shop/users/userinfo", {
+      .get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       })
@@ -70,7 +70,7 @@ const Setting: React.FC<SettingProps> = ({
     let token: any = localStorage.getItem("token");
     axios
       .post(
-        "https://kommaa.shop/users/userinfoup",
+        `${process.env.REACT_APP_SERVER_API}/users/userinfoup`,
         { sitecolor: color },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )
@@ -105,7 +105,7 @@ const Setting: React.FC<SettingProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        "https://kommaa.shop/users/userinfoup",
+        `${process.env.REACT_APP_SERVER_API}/users/userinfoup`,
         { username: name, password: newPwd },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )
@@ -131,7 +131,7 @@ const Setting: React.FC<SettingProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        "https://kommaa.shop/users/logout",
+        `${process.env.REACT_APP_SERVER_API}/users/logout`,
         { logout: "please" },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )

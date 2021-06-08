@@ -36,7 +36,7 @@ const Signin: React.FC<SigninProps> = ({
     } else {
       axios
         .post(
-          "https://kommaa.shop/users/login",
+          `${process.env.REACT_APP_SERVER_API}/users/login`,
           { email: email, password: password },
           { withCredentials: true }
         )
@@ -151,7 +151,7 @@ const Signup: React.FC<SignupProps> = ({
     } else {
       axios
         .post(
-          "https://kommaa.shop/users/signup",
+          `${process.env.REACT_APP_SERVER_API}/users/signup`,
           { email: email, username: username, password: password },
           { withCredentials: true }
         )
