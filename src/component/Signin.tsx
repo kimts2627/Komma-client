@@ -5,6 +5,7 @@ import logo from "../img/logo.png";
 import unlock from "../img/password.svg";
 import email from "../img/email.svg";
 import axios from "axios";
+import { SERVER_API } from "../constants";
 
 interface SigninProps {
   isSignupModalOn: boolean;
@@ -36,7 +37,7 @@ const Signin: React.FC<SigninProps> = ({
     } else {
       axios
         .post(
-          `${process.env.REACT_APP_SERVER_API}/users/login`,
+          `${SERVER_API}/users/login`,
           { email: email, password: password },
           { withCredentials: true }
         )
@@ -151,7 +152,7 @@ const Signup: React.FC<SignupProps> = ({
     } else {
       axios
         .post(
-          `${process.env.REACT_APP_SERVER_API}/users/signup`,
+          `${SERVER_API}/users/signup`,
           { email: email, username: username, password: password },
           { withCredentials: true }
         )

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import x from "../img/plus_black.svg";
 import goToGeneral from "../img/start-grey.png";
 import axios from "axios";
+import { SERVER_API } from "../constants";
 
 interface SettingProps {
   isSettingModalOn: boolean;
@@ -44,7 +45,7 @@ const Setting: React.FC<SettingProps> = ({
   useEffect(() => {
     let token = localStorage.getItem("token");
     axios
-      .get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
+      .get(`${SERVER_API}/users/userinfo`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       })
@@ -70,7 +71,7 @@ const Setting: React.FC<SettingProps> = ({
     let token: any = localStorage.getItem("token");
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_API}/users/userinfoup`,
+        `${SERVER_API}/users/userinfoup`,
         { sitecolor: color },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )
@@ -105,7 +106,7 @@ const Setting: React.FC<SettingProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_API}/users/userinfoup`,
+        `${SERVER_API}/users/userinfoup`,
         { username: name, password: newPwd },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )
@@ -131,7 +132,7 @@ const Setting: React.FC<SettingProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_API}/users/logout`,
+        `${SERVER_API}/users/logout`,
         { logout: "please" },
         { headers: { authorization: `Bearer ${token}` }, withCredentials: true }
       )

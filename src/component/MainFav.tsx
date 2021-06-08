@@ -17,6 +17,7 @@ import yoga from "../img/yoga.png";
 import moon from "../img/moon.png";
 import axios from "axios";
 import { setMixtapeProperty } from "../modules/mixtape";
+import { SERVER_API } from "../constants";
 
 interface MainFavProps {
   isLogin: boolean;
@@ -180,14 +181,14 @@ export const SingleFav: React.FC<SingleFavProps> = ({
     let token = localStorage.getItem("token");
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_API}/playlist/deleteplaylist`,
+        `${SERVER_API}/playlist/deleteplaylist`,
         { id: id },
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       )
       .then((res) => res.data)
       .then((data) => {
         console.log(data);
-        return axios.get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
+        return axios.get(`${SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
@@ -366,14 +367,14 @@ export const FavAddModal: React.FC<FavAddProps> = ({
     }
     axios
       .post(
-        `${process.env.REACT_APP_SERVER_API}/playlist/saveplaylist`,
+        `${SERVER_API}/playlist/saveplaylist`,
         { ...mixtape },
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       )
       .then((res) => res.data)
       .then((data) => {
         console.log(data);
-        return axios.get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
+        return axios.get(`${SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });

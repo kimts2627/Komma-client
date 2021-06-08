@@ -1,25 +1,24 @@
 @mixin on-circle($item-count, $circle-size, $item-size) {
-  width:  $circle-size;
+  width: $circle-size;
   height: $circle-size;
-  border-radius: 50%; 
+  border-radius: 50%;
   > * {
     display: block;
     position: absolute;
-    top:  50%; 
+    top: 50%;
     left: 50%;
-    width:  $item-size;
+    width: $item-size;
     height: $item-size;
     margin: -($item-size / 2);
-  
+
     $angle: (360 / $item-count);
     $rot: 0;
 
     @for $i from 1 through $item-count {
       &:nth-of-type(#{$i}) {
-        transform: 
-          rotate($rot * 1deg) 
+        transform: rotate($rot * 1deg)
           translate($circle-size / 2)
-          rotate(90deg) 
+          rotate(90deg);
       }
       $rot: $rot + $angle;
     }
@@ -36,6 +35,8 @@
   top: 65vh;
   transition: transform 0.1s;
   z-index: 2;
+  background-color: red;
+  box-shadow: inset 100px 10px 200px 2px green;
 }
 
 .sound-list {
@@ -112,11 +113,13 @@
       height: 40px;
       &.left {
         left: 25px;
-        animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite forwards;
+        animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite
+          forwards;
       }
       &.right {
         right: 25px;
-        animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite forwards;
+        animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite
+          forwards;
       }
     }
   }
@@ -138,11 +141,13 @@
     height: 40px;
     &.left {
       left: 25px;
-      animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite forwards;
+      animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite
+        forwards;
     }
     &.right {
       right: 25px;
-      animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite forwards;
+      animation: blink 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite
+        forwards;
     }
     @keyframes blink {
       from {
@@ -234,10 +239,8 @@
 }
 
 @media all and (max-width: 800px) {
-
   .volume-arrow {
     left: 30vw;
     top: 77%;
   }
-
 }

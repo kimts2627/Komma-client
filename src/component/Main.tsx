@@ -8,6 +8,7 @@ import SigninContainer from "../containers/SigninContainer";
 import Ending from "./Ending";
 import SettingContainer from "../containers/SettingContainer";
 import axios from "axios";
+import { SERVER_API } from "../constants";
 
 interface MainProps {
   color: string;
@@ -99,7 +100,7 @@ const Main: React.FC<MainProps> = ({
       // 메인페이지 열릴 때 마다 유저정보에 담긴 각각 화면 구성하는 상태 가져와서 갱신
       let token = localStorage.getItem("token");
       axios
-        .get(`${process.env.REACT_APP_SERVER_API}/users/userinfo`, {
+        .get(`${SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         })

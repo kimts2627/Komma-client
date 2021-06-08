@@ -1,3 +1,5 @@
+import { SERVER_API } from "../constants";
+
 // 액션
 const HANDLE_DELETE_MODE = "mixtape/HANDLE_DELETE_MODE" as const;
 const HANDLE_LIST_ADD_MODAL = "mixtape/HANDLE_LIST_ADD_MODAL" as const;
@@ -76,7 +78,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/xLdYxZL.png",
           id: 20,
           play: true,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/mami.mp3`,
+          soundFile: `${SERVER_API}/sounds/mami.mp3`,
           title: "매미",
         },
         {
@@ -84,7 +86,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/80XYaTr.png",
           id: 28,
           play: true,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/rain.mp3`,
+          soundFile: `${SERVER_API}/sounds/rain.mp3`,
           title: "비",
         },
         {
@@ -92,7 +94,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/lWziGz2.png",
           id: 8,
           play: true,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/country.mp3`,
+          soundFile: `${SERVER_API}/sounds/country.mp3`,
           title: "시골밤",
         },
       ],
@@ -108,7 +110,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/iHRwLhb.png",
           id: 17,
           play: false,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/sunrise_sea.mp3`,
+          soundFile: `${SERVER_API}/sounds/sunrise_sea.mp3`,
           title: "파도",
         },
         {
@@ -116,7 +118,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/fEMbGe7.png",
           id: 18,
           play: false,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/galmagi.mp3`,
+          soundFile: `${SERVER_API}/sounds/galmagi.mp3`,
           title: "갈매기",
         },
       ],
@@ -132,7 +134,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/ixbmiS3.png",
           id: 23,
           play: false,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/church.mp3`,
+          soundFile: `${SERVER_API}/sounds/church.mp3`,
           title: "교회",
         },
         {
@@ -140,7 +142,7 @@ const initialState: MixtapeState = {
           iconImg: "https://i.imgur.com/HnZDCjb.png",
           id: 3,
           play: false,
-          soundFile: `${process.env.REACT_APP_SERVER_API}/sounds/leaves.mp3`,
+          soundFile: `${SERVER_API}/sounds/leaves.mp3`,
           title: "낙엽",
         },
       ],

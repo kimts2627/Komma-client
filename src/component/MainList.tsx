@@ -7,6 +7,7 @@ import touch from "../img/touch.png";
 import touchGuide from "../img/start-grey.png";
 import arrow from "../img/volume-arrow.png";
 import axios from "axios";
+import { SERVER_API } from "../constants";
 
 interface ListProps {
   width: number;
@@ -72,17 +73,18 @@ const MainList: React.FC<ListProps> = ({
   let ref: any = useRef();
   let degree: number = 220;
   useEffect(() => {
+    console.log(ref);
     if (width > 1099) {
       ref.current.style.transform = `rotate(${degree}deg)`;
-      ref.current.addEventListener("mousewheel", (delta: any) => {
+      window.addEventListener("wheel", (delta: any) => {
         if (delta.wheelDelta >= 0) {
-          //console.log('++');
-          //console.log(delta.wheelDelta);
+          // console.log("++");
+          // console.log(delta.wheelDelta);
           ref.current.style.transform = `rotate(${degree}deg)`;
           degree = degree - 2;
         } else {
-          //console.log('--');
-          //console.log(delta.wheelDelta);
+          //   console.log("--");
+          //   console.log(delta.wheelDelta);
           ref.current.style.transform = `rotate(${degree}deg)`;
           degree = degree + 2;
         }
@@ -92,7 +94,7 @@ const MainList: React.FC<ListProps> = ({
 
   // 서버에서 노래정보 가져오기
   useEffect(() => {
-    axios(`${process.env.REACT_APP_SERVER_API}/playlist/songlist`, {
+    axios(`${SERVER_API}/playlist/songlist`, {
       method: "get",
       headers: { "Content-Type": "application/json" },
     })
