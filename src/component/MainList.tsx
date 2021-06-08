@@ -78,13 +78,13 @@ const MainList: React.FC<ListProps> = ({
       ref.current.style.transform = `rotate(${degree}deg)`;
       window.addEventListener("wheel", (delta: any) => {
         if (delta.wheelDelta >= 0) {
-          // console.log("++");
+          console.log("++");
           // console.log(delta.wheelDelta);
           ref.current.style.transform = `rotate(${degree}deg)`;
           degree = degree - 2;
         } else {
-          //   console.log("--");
-          //   console.log(delta.wheelDelta);
+          console.log("--");
+          // console.log(delta.wheelDelta);
           ref.current.style.transform = `rotate(${degree}deg)`;
           degree = degree + 2;
         }
