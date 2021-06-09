@@ -13,6 +13,8 @@ interface ListProps {
   width: number;
   playList?: any[];
   soundList: any[];
+  degree: number;
+  handleDegree: (degree: number) => void;
   addList: (item: object) => void;
   deleteList: (itemId: number) => void;
   setList: (list: any[]) => void;
@@ -39,6 +41,8 @@ const MainList: React.FC<ListProps> = ({
   playList,
   width,
   soundList,
+  degree,
+  handleDegree,
   addList,
   deleteList,
   setList,
@@ -71,25 +75,30 @@ const MainList: React.FC<ListProps> = ({
     모바일 환경에서는 호버 기능과 같이 사용 불가하여, 클릭 이벤트 등으로 대체해야 할듯함.
   */
   let ref: any = useRef();
-  let degree: number = 220;
+  let _degree: number = 220;
   useEffect(() => {
     console.log(ref);
-    if (width > 1099) {
-      ref.current.style.transform = `rotate(${degree}deg)`;
-      window.addEventListener("wheel", (delta: any) => {
-        if (delta.wheelDelta >= 0) {
-          console.log("++");
-          // console.log(delta.wheelDelta);
-          ref.current.style.transform = `rotate(${degree}deg)`;
-          degree = degree - 2;
-        } else {
-          console.log("--");
-          // console.log(delta.wheelDelta);
-          ref.current.style.transform = `rotate(${degree}deg)`;
-          degree = degree + 2;
-        }
-      });
+
+    ref.current.style.transform = `rotate(${_degree}deg)`;
+    console.log("why");
+    ref.current.addEventListener("wheel", wheelEvent);
+
+    function wheelEvent(delta: any): void {
+      if (delta.wheelDelta >= 0) {
+        console.log("++");
+        console.log(delta.wheelDelta);
+        ref.current.style.transform = `rotate(${_degree}deg)`;
+        _degree -= 2;
+      } else {
+        console.log("--");
+        console.log(delta.wheelDelta);
+        ref.current.style.transform = `rotate(${_degree}deg)`;
+        _degree += 2;
+      }
     }
+    return () => {
+      ref.current.removeEventListener("wheel", wheelEvent);
+    };
   }, []);
 
   // 서버에서 노래정보 가져오기
