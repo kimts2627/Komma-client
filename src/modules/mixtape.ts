@@ -64,7 +64,22 @@ const initialState: MixtapeState = {
       id: 999,
       icon: " https://i.imgur.com/POL0Oip.png",
       savesongs: [
-        /* 랜덤으로 생겨요~! */
+        {
+          defaultVolume: 0.8,
+          iconImg: "https://i.imgur.com/xLdYxZL.png",
+          id: 20,
+          play: true,
+          soundFile: `${SERVER_API}/sounds/mami.mp3`,
+          title: "매미",
+        },
+        {
+          defaultVolume: 0.6,
+          iconImg: "https://i.imgur.com/80XYaTr.png",
+          id: 28,
+          play: true,
+          soundFile: `${SERVER_API}/sounds/rain.mp3`,
+          title: "비",
+        },
       ],
     },
     {

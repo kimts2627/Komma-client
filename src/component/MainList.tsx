@@ -23,6 +23,7 @@ interface ListProps {
 }
 
 interface SingleSoundProps {
+  key: any;
   id: number;
   url: string;
   icon: string;
@@ -138,6 +139,7 @@ const MainList: React.FC<ListProps> = ({
 };
 
 const SingleSoundCard: React.FC<SingleSoundProps> = ({
+  key,
   id,
   url,
   icon,

@@ -14,6 +14,7 @@ interface SelectedProps {
 }
 
 interface SingleListProps {
+  key: any;
   soundList: any[];
   playList: any[];
   id: number;
@@ -80,6 +81,7 @@ const MainSelected: React.FC<SelectedProps> = ({
 };
 
 export const SingleList: React.FC<SingleListProps> = ({
+  key,
   soundList,
   id,
   icon,

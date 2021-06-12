@@ -127,6 +127,7 @@ const MainFav: React.FC<MainFavProps> = ({
 };
 
 interface SingleFavProps {
+  key: any;
   width: number;
   title: string;
   icon: string;
@@ -141,6 +142,7 @@ interface SingleFavProps {
   handleLogin: () => void;
 }
 export const SingleFav: React.FC<SingleFavProps> = ({
+  key,
   width,
   title,
   icon,
