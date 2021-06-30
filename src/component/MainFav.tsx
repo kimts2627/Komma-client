@@ -189,7 +189,7 @@ export const SingleFav: React.FC<SingleFavProps> = ({
       )
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         return axios.get(`${SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
@@ -197,7 +197,7 @@ export const SingleFav: React.FC<SingleFavProps> = ({
       })
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (mixtapes) {
           let modifiedMixtape = mixtapes.slice(0, 3);
           if (data.playlist) {
@@ -266,8 +266,8 @@ export const SingleFav: React.FC<SingleFavProps> = ({
     }
     onsetSoundListProperty(modifiedSoundlist);
     onsetMixtapeProperty(modifiedMixtapes);
-    console.log(soundList);
-    console.log(mixtapes);
+    // console.log(soundList);
+    // console.log(mixtapes);
   };
 
   return (
@@ -375,7 +375,7 @@ export const FavAddModal: React.FC<FavAddProps> = ({
       )
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         return axios.get(`${SERVER_API}/users/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
@@ -383,7 +383,7 @@ export const FavAddModal: React.FC<FavAddProps> = ({
       })
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         onaddItem(data.playlists[data.playlists.length - 1]);
         onhandleSelectedIcon("");
         onhandleListAddModal();

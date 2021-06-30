@@ -158,7 +158,7 @@ const Signup: React.FC<SignupProps> = ({
         )
         .then((res) => res.data)
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.message === "email exists") {
             errorRef.current.textContent = "존재하는 이메일 입니다";
           } else {

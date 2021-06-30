@@ -77,7 +77,7 @@ const Setting: React.FC<SettingProps> = ({
       )
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         changeColor(color);
       })
       .catch((error) => {
@@ -112,7 +112,7 @@ const Setting: React.FC<SettingProps> = ({
       )
       .then((res) => res.data)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         handleUserInfoChangeMode();
       })
       .catch((error) => {

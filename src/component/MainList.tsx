@@ -78,21 +78,18 @@ const MainList: React.FC<ListProps> = ({
   let ref: any = useRef();
   let _degree: number = 220;
   useEffect(() => {
-    console.log(ref);
-
     ref.current.style.transform = `rotate(${_degree}deg)`;
-    console.log("why");
     ref.current.addEventListener("wheel", wheelEvent);
 
     function wheelEvent(delta: any): void {
       if (delta.wheelDelta >= 0) {
-        console.log("++");
-        console.log(delta.wheelDelta);
+        // console.log("++");
+        // console.log(delta.wheelDelta);
         ref.current.style.transform = `rotate(${_degree}deg)`;
         _degree -= 2;
       } else {
-        console.log("--");
-        console.log(delta.wheelDelta);
+        // console.log("--");
+        // console.log(delta.wheelDelta);
         ref.current.style.transform = `rotate(${_degree}deg)`;
         _degree += 2;
       }
@@ -110,7 +107,7 @@ const MainList: React.FC<ListProps> = ({
     })
       .then((res) => res.data)
       .then((data) => {
-        console.log(data.songlist);
+        // console.log(data.songlist);
         getSoundList(data.songlist);
       });
   }, []);
@@ -225,7 +222,7 @@ const SingleSoundCard: React.FC<SingleSoundProps> = ({
         } else {
           modifiedSoundList[i].defaultVolume = 0.2;
         }
-        console.log(modifiedSoundList[i].defaultVolume);
+        // console.log(modifiedSoundList[i].defaultVolume);
         setSoundListProperty(modifiedSoundList);
       }
     }
@@ -350,7 +347,6 @@ export const TouchGuide: React.FC<GuideProps> = ({ degree, handleDegree }) => {
 
   useEffect(() => {
     soundList = document.querySelector(".sound-list-m");
-    console.log(soundList);
     soundList.style.transform = `rotate(${degree}deg)`;
   }, [degree]);
 

@@ -125,7 +125,7 @@ export const SingleList: React.FC<SingleListProps> = ({
         } else {
           modifiedSoundList[i].defaultVolume = 0.2;
         }
-        console.log(modifiedSoundList[i].defaultVolume);
+        // console.log(modifiedSoundList[i].defaultVolume);
         setSoundListProperty(modifiedSoundList);
       }
     }

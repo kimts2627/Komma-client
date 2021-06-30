@@ -68,7 +68,6 @@ export const Timer: React.FC<TimerProps> = ({
     const timerId = setInterval(() => {
       const currentTime = document.querySelector(".time")?.textContent;
       if (currentTime === "00 : 00") {
-        console.log("타이머 끝내기");
         clearInterval(timerId); // shut down setInterval
         stopToTimer(); // isCount to false
         handlingEndingModal(); // isEndingModalOn to true

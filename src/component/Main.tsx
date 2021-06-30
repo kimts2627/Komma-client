@@ -106,15 +106,15 @@ const Main: React.FC<MainProps> = ({
         })
         .then((res) => res.data)
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.userInfo.sitecolor !== color) {
             changeColor(data.userInfo.sitecolor);
           }
           // 믹스테잎 업데이트 및 랜덤플레이 리스트 섞기
           if (mixtape) {
             let modifiedMixtape = mixtape.slice();
-            console.log(modifiedMixtape);
-            console.log(data.playlists);
+            // console.log(modifiedMixtape);
+            // console.log(data.playlists);
             if (modifiedMixtape.length === 4) {
               for (let i = 0; i < data.playlists.length; i++) {
                 modifiedMixtape.push(data.playlists[i]);
@@ -130,10 +130,10 @@ const Main: React.FC<MainProps> = ({
                   soundList[Math.floor(Math.random() * (5 - 0 + 1)) + 0];
                 modifiedMixtape[0].savesongs.push(randomOne);
               }
-              console.log(modifiedMixtape);
+              // console.log(modifiedMixtape);
               setMixtapeProperty(modifiedMixtape);
-              console.log(modifiedMixtape);
-              console.log("믹스테잎 업데이트 및 섞기");
+              // console.log(modifiedMixtape);
+              // console.log("믹스테잎 업데이트 및 섞기");
             }
           }
         })
@@ -148,7 +148,6 @@ const Main: React.FC<MainProps> = ({
           }
         });
     }
-    console.log("로그인유지 작동");
   }, []);
 
   return (
